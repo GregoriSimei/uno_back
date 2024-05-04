@@ -2,7 +2,7 @@ import { Express, Router } from 'express'
 import { join } from 'path'
 import recursiveReaddir from 'recursive-readdir'
 
-export default async (app: Express): Promise<void> => {
+export async function setupRoutes(app: Express): Promise<void> {
   const router = Router()
   app.use('/uno-api', router)
 
