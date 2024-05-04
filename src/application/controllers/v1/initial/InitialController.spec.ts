@@ -3,7 +3,7 @@ import 'reflect-metadata'
 import { beforeAll, describe, expect, it } from "vitest";
 import { IInitialUseCase } from '@/application/useCases/v1/InitialUseCase/IInitialUseCase';
 import { container } from 'tsyringe';
-import { MockInitialUseCase } from '../../../../tests/useCases/MockInitialUseCase';
+import { MockInitialUseCase } from '../../../../tests/mocks/useCases/MockInitialUseCase';
 import { Controller } from '../../../../infra/protocols/controller';
 import { InitialController } from './InitialController';
 
