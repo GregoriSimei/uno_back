@@ -1,8 +1,8 @@
 import 'reflect-metadata'
 
 import { beforeAll, describe, expect, it } from 'vitest'
-import { IInitialUseCase } from './v1/IInitialUseCase'
-import { InitialUseCase } from './v1/InitialUseCase'
+import { IInitialUseCase } from './IInitialUseCase'
+import { InitialUseCase } from './InitialUseCase'
 
 interface Stub {
     useCase: IInitialUseCase

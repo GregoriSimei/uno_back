@@ -1,6 +1,6 @@
 import { Controller } from "@/infra/protocols/controller";
 import { HttpRequest, HttpResponse } from "@/infra/protocols/http";
-import { IInitialUseCase } from "@/application/useCases/v1/IInitialUseCase";
+import { IInitialUseCase } from "@/application/useCases/v1/InitialUseCase/IInitialUseCase";
 import { inject, injectable } from "tsyringe";
 import { responseOk } from "@/infra/adapters/responses";
 
