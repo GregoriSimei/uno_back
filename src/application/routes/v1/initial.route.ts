@@ -1,4 +1,4 @@
-import { Controller } from "@/application/protocols/controller"
+import { Controller } from "@/infra/protocols/controller"
 import { adaptRoute } from "@/infra/adapters/express-adapter-route"
 import { Router } from "express"
 import { container } from "tsyringe"

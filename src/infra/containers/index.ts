@@ -1,3 +1,4 @@
 import 'reflect-metadata'
 
-export * from './controllers'
+import './controllers'
+import './useCases'

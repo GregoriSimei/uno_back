@@ -1,8 +1,18 @@
-import { Controller } from "@/application/protocols/controller";
-import { HttpRequest, HttpResponse } from "@/application/protocols/http";
+import { Controller } from "@/infra/protocols/controller";
+import { HttpRequest, HttpResponse } from "@/infra/protocols/http";
+import { IInitialUseCase } from "@/application/useCases/v1/IInitialUseCase";
+import { inject, injectable } from "tsyringe";
+import { responseOk } from "@/infra/adapters/responses";
 
+@injectable()
 export class InitialController implements Controller {
-    handle(httpRequest: HttpRequest): Promise<HttpResponse> {
-        throw new Error("Method not implemented.");
+    constructor(
+        @inject('IInitialUseCase')
+        private initialUseCase: IInitialUseCase
+    ) {}
+
+    async handle(_: HttpRequest): Promise<HttpResponse> {
+        const result = await this.initialUseCase.execute()
+        return responseOk(result)
     }
 }
