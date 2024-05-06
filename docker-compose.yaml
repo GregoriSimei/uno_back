@@ -1,0 +1,12 @@
+services:
+  nodejs-stg:
+    container_name: uno-back-stg
+    image: node:18
+    env_file:
+      - ./.env.stg
+    ports:
+      - "3001:3001"
+    command: 'yarn dev:stg'
+    volumes:
+      - .:/app/node
+    working_dir: /app/node
