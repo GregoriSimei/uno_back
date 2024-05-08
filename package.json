@@ -7,6 +7,7 @@
   "license": "MIT",
   "scripts": {
     "build": "rimraf build && tsc -p tsconfig.json",
+    "prod": "node --trace-warnings -r dotenv/config build/index.js",
     "dev:stg": "dotenvx run --env-file=.env.stg -- tsnd --inspect --transpile-only --ignore-watch node_modules -r tsconfig-paths/register src/index.ts",
     "test": "vitest"
   },
