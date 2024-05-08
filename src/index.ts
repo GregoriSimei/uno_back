@@ -1,1 +1,2 @@
-import './infra/server'
+import './config/alias'
+import './config/server'
