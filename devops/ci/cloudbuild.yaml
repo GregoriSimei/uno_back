@@ -23,5 +23,9 @@ steps:
       - 'apply'
       - '-f'
       - 'devops/k8s/uno-back-config-map.yaml'
+      - '-n'
+      - 'staging'
     env:
+      - 'CLOUDSDK_COMPUTE_ZONE=southamerica-east1-a'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=uno-cluster-1'
       - '_VAR_TEST=$_VAR_TEST'
