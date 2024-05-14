@@ -26,4 +26,16 @@ steps:
       - |
         sed -i 's/_VAR_TEST/${_VAR_TEST}/' devops/k8s/uno-back-config-map.yaml
 
+  # Deploy app
+  - name: 'gcr.io/cloud-builders/kubectl'
+    id: Deploy
+    args: [
+      'apply',
+      '-f', 'devops/k8s/uno-back-deployment.yaml',
+      '-f', 'devops/k8s/uno-back-service.yaml',
+      '-n', 'rol']
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=southamerica-east1'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=jornadadigital-gke-cluster-prd-01'
+
   
