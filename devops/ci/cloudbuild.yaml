@@ -36,7 +36,7 @@ steps:
       '-f', 'devops/k8s/uno-back-service.yaml',
       '-n', 'rol']
     env:
-      - 'CLOUDSDK_COMPUTE_ZONE=southamerica-east1'
-      - 'CLOUDSDK_CONTAINER_CLUSTER=jornadadigital-gke-cluster-prd-01'
+      - 'CLOUDSDK_COMPUTE_ZONE=southamerica-east1-a'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=uno-cluster-1'
 
   
