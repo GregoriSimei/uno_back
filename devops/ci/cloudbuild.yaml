@@ -34,7 +34,7 @@ steps:
       '-f', 'devops/k8s/uno-back-config-map.yaml',
       '-f', 'devops/k8s/uno-back-deployment.yaml',
       '-f', 'devops/k8s/uno-back-service.yaml',
-      '-n', 'rol']
+      '-n', 'staging']
     env:
       - 'CLOUDSDK_COMPUTE_ZONE=southamerica-east1-a'
       - 'CLOUDSDK_CONTAINER_CLUSTER=uno-cluster-1'
