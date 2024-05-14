@@ -137,3 +137,4 @@ dist
 .env*
 build
 .vscode
+yarn.lock
