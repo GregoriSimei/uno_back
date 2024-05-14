@@ -9,3 +9,10 @@ steps:
       - '-t'
       - 'gcr.io/$PROJECT_ID/uno-back:$SHORT_SHA-$BUILD_ID'
       - '.'
+
+  # pushes the image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    id: Push
+    args:
+      - 'push'
+      - 'gcr.io/$PROJECT_ID/uno-back:$SHORT_SHA-$BUILD_ID'
