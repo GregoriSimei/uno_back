@@ -5,10 +5,10 @@ export async function errorHandler(
     error: Error,
     _: Request,
     response: Response,
-    next: NextFunction
-  ) {
+    _next: NextFunction
+  ): Promise<void> {
     const responseObject = {
-      status: EHttpStatusCode.INTERNAL_SERVER_ERROR,
+      status:  EHttpStatusCode.INTERNAL_SERVER_ERROR,
       message: `Internal Server error - ${error.message}`
     }
   

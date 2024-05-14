@@ -11,8 +11,9 @@ export class InitialController implements Controller {
     private initialUseCase: IInitialUseCase
   ) {}
 
-  async handle(_: HttpRequest): Promise<any> {
+  async handle(_: HttpRequest): Promise<HttpResponse> {
     const result = await this.initialUseCase.execute()
+
     return responseOk(result)
   }
 }
