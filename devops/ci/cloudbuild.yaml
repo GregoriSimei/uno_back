@@ -9,3 +9,34 @@ steps:
       - '-t'
       - 'gcr.io/$PROJECT_ID/uno-back:$SHORT_SHA-$BUILD_ID'
       - '.'
+
+  # pushes the image to Container Registry
+  - name: 'gcr.io/cloud-builders/docker'
+    id: Push
+    args:
+      - 'push'
+      - 'gcr.io/$PROJECT_ID/uno-back:$SHORT_SHA-$BUILD_ID'
+
+  # replace values on configmap with the matched vars in gcp trigger
+  - name: 'gcr.io/cloud-builders/gcloud'
+    id: Replace vars
+    entrypoint: /bin/sh
+    args:
+      - '-c'
+      - |
+        sed -i 's/_VAR_TEST/${_VAR_TEST}/' devops/k8s/uno-back-config-map.yaml
+
+  # Deploy app
+  - name: 'gcr.io/cloud-builders/kubectl'
+    id: Deploy
+    args: [
+      'apply',
+      '-f', 'devops/k8s/uno-back-config-map.yaml',
+      '-f', 'devops/k8s/uno-back-deployment.yaml',
+      '-f', 'devops/k8s/uno-back-service.yaml',
+      '-n', 'rol']
+    env:
+      - 'CLOUDSDK_COMPUTE_ZONE=southamerica-east1-a'
+      - 'CLOUDSDK_CONTAINER_CLUSTER=uno-cluster-1'
+
+  
