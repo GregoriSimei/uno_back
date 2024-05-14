@@ -135,3 +135,6 @@ dist
 
 # End of https://mrkandreev.name/snippets/gitignore-generator/#Node,yarn
 .env*
+build
+.vscode
+yarn.lock

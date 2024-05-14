@@ -1,4 +1,4 @@
-import './containers'
+import '../infra/containers'
 
 import express from 'express'
 import http from 'http'
