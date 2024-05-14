@@ -2,3 +2,23 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: uno-back-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: uno-back-app
+  template:
+    metadata:
+      labels:
+        app: uno-back-app
+    spec:
+      containers:
+        - name: uno-back
+          image: 'gcr.io/GOOGLE_CLOUD_PROJECT/uno-back:latest'
+          envFrom:
+            - configMapRef:
+                name: uno-back-config-map
+          ports:
+            - containerPort: 3001
+              name: http
+              protocol: TCP

@@ -16,3 +16,12 @@ steps:
     args:
       - 'push'
       - 'gcr.io/$PROJECT_ID/uno-back:$SHORT_SHA-$BUILD_ID'
+
+  # replace values on configmap with the matched vars in gcp trigger
+  - name: 'gcr.io/cloud-builders/kubectl'
+    args:
+      - 'apply'
+      - '-f'
+      - 'devops/k8s/uno-back-config-map.yaml'
+    env:
+      - '_VAR_TEST=$_VAR_TEST'

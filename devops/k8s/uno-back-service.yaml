@@ -4,7 +4,7 @@ metadata:
   name: uno-back-svc
 spec:
   selector:
-    app: uno-back-deployment
+    app: uno-back-app
   ports:
     - port: 3001
       protocol: TCP

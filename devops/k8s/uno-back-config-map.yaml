@@ -4,3 +4,4 @@ metadata:
   name: uno-back-config-map
 data:
   PORT: '3001'
+  VAR_TEST: _VAR_TEST
