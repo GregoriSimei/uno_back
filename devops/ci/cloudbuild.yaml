@@ -1,0 +1,11 @@
+steps:
+  #builds the container image.
+  - name: 'gcr.io/cloud-builders/docker'
+    id: Build image
+    args:
+      - 'build'
+      - '-f'
+      - 'devops/dockerfile'
+      - '-t'
+      - 'gcr.io/$PROJECT_ID/uno-back:$SHORT_SHA-$BUILD_ID'
+      - '.'
