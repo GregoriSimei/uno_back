@@ -26,6 +26,7 @@ steps:
       - |
         sed -i 's/_VAR_TEST/${_VAR_TEST}/' devops/k8s/uno-back-config-map.yaml
         sed -i 's/GOOGLE_CLOUD_PROJECT/${PROJECT_ID}/' devops/k8s/uno-back-deployment.yaml
+        sed -i 's/LATEST_CONTAINER/${SHORT_SHA}-${BUILD_ID}/' devops/k8s/uno-back-deployment.yaml
 
   # Deploy app
   - name: 'gcr.io/cloud-builders/kubectl'

@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: uno-back
-          image: 'gcr.io/GOOGLE_CLOUD_PROJECT/uno-back:latest'
+          image: 'gcr.io/GOOGLE_CLOUD_PROJECT/uno-back:LATEST_CONTAINER'
           envFrom:
             - configMapRef:
                 name: uno-back-config-map
