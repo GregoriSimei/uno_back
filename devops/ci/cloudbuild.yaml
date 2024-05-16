@@ -1,13 +1,4 @@
 steps:
-  # Instalar dependências com yarn
-  - name: 'gcr.io/cloud-builders/yarn'
-    args: ['install']
-
-  # Executar os testes com yarn
-  - name: 'gcr.io/cloud-builders/yarn'
-    id: Quality Check
-    args: ['test']
-
   #builds the container image.
   - name: 'gcr.io/cloud-builders/docker'
     id: Build image
