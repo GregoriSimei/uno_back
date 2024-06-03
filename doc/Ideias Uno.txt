@@ -1,0 +1,2 @@
+Fluxo de jogo, irá ocorrer durante o processamento do web socket
+Dados salvos no banco de dados serão calculados através de algum servico de Pub/Sub
